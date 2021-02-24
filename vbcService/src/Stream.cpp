@@ -30,7 +30,7 @@ Stream::Stream(const char* cam, const char* audio, int streamIndex) {
     mFile->sendHeader();
 
     if (isCameraType()) {
-        mVideoCap->mMtcnn = new mtcnn(mVideoCap->getHeight(), mVideoCap->getWidth());
+        //mVideoCap->mMtcnn = new mtcnn(mVideoCap->getHeight(), mVideoCap->getWidth());
     }
 
 }
@@ -88,6 +88,7 @@ void Stream::workAudioCycle() {
 
 int Stream::work() {
 
+    //if(isCameraType() && mAudioCap!= nullptr){
     if(isCameraType()){
         mAudioThread = new std::thread(&Stream::workAudio, this);
     }
