@@ -2,7 +2,10 @@
 // Created by joey on 12/24/20.
 //
 
-#define BOOST_TEST_INCLUDED
+//#define BOOST_TEST_INCLUDED
+
+#undef main
+#define BOOST_TEST_MAIN
 
 #include <boost/test/included/unit_test.hpp>
 #include "../include/DeviceManager.h"
@@ -18,19 +21,19 @@ BOOST_AUTO_TEST_SUITE (testDeviceManager) // name of the test suite is stringtes
 	BOOST_AUTO_TEST_CASE (testDeviceManager)
 	{
 		DeviceManager* deviceManager = DeviceManager::getInstance();
-		deviceManager->addDevice("192.168.0.4", 5006, 1);
+		deviceManager->addDevice("192.168.9.12", 5006, 1);
 		BOOST_REQUIRE_EQUAL (1, deviceManager->getDeviceList().size());
-		deviceManager->addDevice("192.168.0.24", 5006, 2);
+		deviceManager->addDevice("192.168.9.12", 8080, 2);
 		vector<Device> myDevices = deviceManager->getDeviceList();
-		BOOST_REQUIRE_EQUAL (1, myDevices.size());
-		BOOST_REQUIRE_EQUAL (1, deviceManager->getDeviceList().size());
+		BOOST_REQUIRE_EQUAL (2, myDevices.size());
+		BOOST_REQUIRE_EQUAL (2, deviceManager->getDeviceList().size());
 		deviceManager->removeDevicebyIndex(2);
 		BOOST_REQUIRE_EQUAL (1, deviceManager->getDeviceList().size());
 		deviceManager->removeDevicebyIndex(1);
 		BOOST_REQUIRE_EQUAL (0, deviceManager->getDeviceList().size());
 
 		deviceManager->clearDevice();
-		BOOST_REQUIRE_EQUAL (1, myDevices.size());
+		BOOST_REQUIRE_EQUAL (2, myDevices.size());
 		BOOST_REQUIRE_EQUAL (0, deviceManager->getDeviceList().size());
 	}
 

@@ -188,10 +188,10 @@ void MergeStream::cycle() {
         }
     }
     else {
-        AVFrame* audioFrame = mPVWStream->getMergeAudioFrame();
+        /*AVFrame* audioFrame = mPVWStream->getMergeAudioFrame();
         if (audioFrame != nullptr) {
             mXRtmp->encodeAudioAndSend(audioFrame);
             av_frame_free(&audioFrame);
-        }
+        }*/
     }
 }

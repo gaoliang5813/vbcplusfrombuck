@@ -25,7 +25,7 @@ DeviceManager* DeviceManager::getInstance() {
 
 int DeviceManager::initialize(){
 	//TODO:May load from configure file and add devices
-	addDevice("192.168.0.23", 5006, 1);
+	//addDevice("192.168.0.23", 5006, 1);
 	//Power ON the added devices
 	sendDeviceCmdbyIndex("#01O1\r\n", 1);
 

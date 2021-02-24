@@ -5,8 +5,8 @@
 #ifndef VBCSERVICE_COMMONFUNCTION_H
 #define VBCSERVICE_COMMONFUNCTION_H
 
-#define PGM_URL "rtmp://192.168.0.56/live/pgm"
-#define MERGE_URL "rtmp://192.168.0.56/live/merge"
+#define PGM_URL "rtmp://192.168.9.2/live/pgm"
+#define MERGE_URL "rtmp://192.168.9.2/live/merge"
 #define DEFAULT_AUDIO_FILE "../resources/sound.aac"
 
 #define MAX_PVW_SOURCE 4

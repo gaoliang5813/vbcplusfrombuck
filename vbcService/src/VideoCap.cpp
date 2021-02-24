@@ -601,7 +601,7 @@ AVFrame* VideoCap::findFaceInYUVFrame(AVFrame* yuvFrame) {
     }
 
     // cv::imwrite("1.jpg",rgbFrame);
-    mMtcnn->findFace(rgbFrame);
+    //mMtcnn->findFace(rgbFrame);
     // cv::imwrite("2.jpg",rgbFrame);
     convertMatToFaceFrame(rgbFrame);
     rgbFrame.release();

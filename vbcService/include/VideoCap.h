@@ -6,8 +6,11 @@
 #define __VBCSERVICE_VIDEOCAP_H__
 
 #include <string>
-#include "network.h"
-#include "mtcnn.h"
+//#include "network.h"
+//#include "mtcnn.h"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+using namespace cv;
 
 struct AVPacket;
 struct AVFrame;
@@ -57,7 +60,7 @@ public:
     int getHeight() const;
     int getFPS() const;
     int getSampleRate() const;
-    mtcnn * getMtcnn() const;
+//    mtcnn * getMtcnn() const;
 
     AVStream* getVideoStream() const;
     AVStream* getAudioStream() const;
@@ -78,7 +81,7 @@ public:
     AVFrame* scale(AVFrame*);
     AVFrame* upscale(AVFrame*);
 
-    mtcnn* mMtcnn;
+//    mtcnn* mMtcnn;
 private:
     VideoCap() = delete;
 

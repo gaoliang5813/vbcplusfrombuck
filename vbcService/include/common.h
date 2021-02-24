@@ -4,7 +4,7 @@
 
 #ifndef _TRT_COMMON_H_
 #define _TRT_COMMON_H_
-#include "NvInfer.h"
+//#include "NvInfer.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -22,7 +22,7 @@
 
 
 // Logger for GIE info/warning/errors
-class Logger : public nvinfer1::ILogger
+/*class Logger : public nvinfer1::ILogger
 {
 public:
     void log(nvinfer1::ILogger::Severity severity, const char* msg) override
@@ -40,7 +40,7 @@ public:
         }
         std::cerr << msg << std::endl;
     }
-};
+};*/
 
 std::string locateFile(const std::string& input, const std::vector<std::string> & directories);
 void readPGMFile(const std::string& fileName,  uint8_t *buffer, int inH, int inW);
